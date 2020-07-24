@@ -1,0 +1,30 @@
+
+
+
+<form  #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)" > 
+    <!--[formGroup] = "loginForm"-->
+    <div class="login">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h3>User Login</h3>
+                    <br/>
+                    <input type="password" placeholder="Password" name="Password" #password="ngModel" [(ngModel)]="userservice.formData.Password"/>
+                    <br/>
+                    <input type="text" placeholder="Email" name="Username" #password="ngModel" [(ngModel)]="userservice.formData.Username"/>
+                    <br/>
+                    <button type="submit">Submit</button>
+                 </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+             
+         </div>
+      </div>
+</form>
+
+

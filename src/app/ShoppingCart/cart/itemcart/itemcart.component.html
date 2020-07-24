@@ -1,6 +1,10 @@
 
 <h1></h1>
 <div class="cartItem">
-    
+    <span>{{cartItems.productName}} </span> *
+    <span>{{cartItems.quantity}}</span>
+    <strong>{{(cartItems.unitPrice * cartItems.quantity)| currency:'Rs'}}</strong>
 
 </div>
+
+

@@ -1,0 +1,40 @@
+
+
+<form #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6"> 
+
+                <input type="text" placeholder="First Name" name="firstname" #FirstName="ngModel" [(ngModel)]="customerservice.formData.FirstName" class="formcl"/><br/>
+                <input type="text" placeholder="Last Name" name="lastname" #LastName="ngModel" [(ngModel)]="customerservice.formData.LastName" class="formcl"/><br>
+                <input type="text" placeholder="Email" name="email" #Email="ngModel" [(ngModel)]="customerservice.formData.Email" class="formcl"/><br/>
+                <input type="Password" placeholder="password" name="password" #Password="ngModel" [(ngModel)]="customerservice.formData.Password" class="formcl"/><br/>
+                <input type="text" placeholder="Billing Address" name="billingaddress" #BilingAddress="ngModel" [(ngModel)]="customerservice.formData.BilingAddress" class="formcl"/><br/>
+                <input type="text" placeholder="Delivery Address" name="deliveryaddress" #DeliveryAddress="ngModel" [(ngModel)]="customerservice.formData.DeliveryAddress" class="formcl"/><br/>
+                <input type="text" placeholder="Delivery City" name="deliverycity" #DeliveryCity="ngModel" [(ngModel)]="customerservice.formData.DeliveryCity" class="formcl"/><br/>
+                <input type="text" placeholder="Mobile" name="mobileno" #Mobile="ngModel" [(ngModel)]="customerservice.formData.MobileNo" class="formcl"/>
+                <button type="submit">Submit</button>
+        
+
+            </div>
+            <div class="col-md-3">
+
+            </div>
+
+        </div>
+
+        <!--Servic.Customer-->
+        
+        
+        
+        
+
+    </div>
+ 
+
+</form>
+
+

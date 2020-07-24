@@ -1,10 +1,10 @@
 
-<div class="aleart aleart-info" > Your cart is empty </div>
+<div *ngIf="cartItems.length === 0" class="aleart aleart-info" > Your cart is empty </div>
    
 
-<ul  class="list-group">
-    <li class="list-group-item" *ngFor="let i of [1,2,3,4]">
-        <app-itemcart></app-itemcart>
+<ul  *ngIf="cartItems.length > 0" class="list-group">
+    <li class="list-group-item" *ngFor="let item of cartItems">
+        <app-itemcart [cartItems]= item></app-itemcart>
         
     </li>
 
