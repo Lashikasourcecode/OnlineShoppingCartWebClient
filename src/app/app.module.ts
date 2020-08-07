@@ -19,6 +19,9 @@ import { ItemcartComponent } from './ShoppingCart/cart/itemcart/itemcart.compone
 import { RegistrationComponent } from './registration/registration.component';
 import{AppRoutingModule} from'../../src/app/app-routing.module';
 import { UserloginComponent } from './Login/userlogin/userlogin.component';
+import { ProductListComponent } from './Products/product-list/product-list.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { CheckoutitemComponent } from './ShoppingCart/cart/checkoutitem/checkoutitem.component';
 
 
 
@@ -36,6 +39,9 @@ import { UserloginComponent } from './Login/userlogin/userlogin.component';
     ItemcartComponent,
     RegistrationComponent,
     UserloginComponent,
+    ProductListComponent,
+    CheckOutComponent,
+    CheckoutitemComponent,
   
     //routingComponent
   ],

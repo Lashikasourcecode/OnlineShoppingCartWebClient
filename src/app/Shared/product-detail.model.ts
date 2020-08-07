@@ -1,5 +1,5 @@
 export class ProductDetail {
-    ProductId : Number;
+    productId:Number;
     productName : string;
     quantity:Number;
     image:String;
@@ -10,7 +10,7 @@ export class ProductDetail {
 
     constructor(productId,productName,quantity,image,Discription,unitPrice,Discount,CatergoryId)
     {
-        this.ProductId = productId
+        this.productId = productId
         this.productName = productName
         this.quantity = quantity
         this.image = image

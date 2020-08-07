@@ -1,6 +1,6 @@
 
 
-<form #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)">
+<form #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)" ngNativeValidate>
     <div class="form-group">
         <div class="row">
             <div class="col-md-3">
@@ -8,15 +8,15 @@
             </div>
             <div class="col-md-6"> 
 
-                <input type="text" placeholder="First Name" name="firstname" #FirstName="ngModel" [(ngModel)]="customerservice.formData.FirstName" class="formcl"/><br/>
-                <input type="text" placeholder="Last Name" name="lastname" #LastName="ngModel" [(ngModel)]="customerservice.formData.LastName" class="formcl"/><br>
-                <input type="text" placeholder="Email" name="email" #Email="ngModel" [(ngModel)]="customerservice.formData.Email" class="formcl"/><br/>
-                <input type="Password" placeholder="password" name="password" #Password="ngModel" [(ngModel)]="customerservice.formData.Password" class="formcl"/><br/>
-                <input type="text" placeholder="Billing Address" name="billingaddress" #BilingAddress="ngModel" [(ngModel)]="customerservice.formData.BilingAddress" class="formcl"/><br/>
-                <input type="text" placeholder="Delivery Address" name="deliveryaddress" #DeliveryAddress="ngModel" [(ngModel)]="customerservice.formData.DeliveryAddress" class="formcl"/><br/>
-                <input type="text" placeholder="Delivery City" name="deliverycity" #DeliveryCity="ngModel" [(ngModel)]="customerservice.formData.DeliveryCity" class="formcl"/><br/>
-                <input type="text" placeholder="Mobile" name="mobileno" #Mobile="ngModel" [(ngModel)]="customerservice.formData.MobileNo" class="formcl"/>
-                <button type="submit">Submit</button>
+                <input type="text" placeholder="First Name" name="firstname" #FirstName="ngModel" [(ngModel)]="customerservice.formData.FirstName" class="form-control" required/><br/>
+                <input type="text" placeholder="Last Name" name="lastname" #LastName="ngModel" [(ngModel)]="customerservice.formData.LastName" class="form-control" required/><br>
+                <input type="text" placeholder="Email" name="email" #Email="ngModel" [(ngModel)]="customerservice.formData.Email" class="form-control" required/><br/>
+                <input type="Password" placeholder="password" name="password" #Password="ngModel" [(ngModel)]="customerservice.formData.Password" class="form-control" required/><br/>
+                <input type="text" placeholder="Billing Address" name="BilingAddress" #BilingAddress="ngModel" [(ngModel)]="customerservice.formData.BilingAddress" class="form-control" required/><br/>
+                <input type="text" placeholder="Delivery Address" name="deliveryaddress" #DeliveryAddress="ngModel" [(ngModel)]="customerservice.formData.DeliveryAddress" class="form-control" required/><br/>
+                <input type="text" placeholder="Delivery City" name="deliverycity" #DeliveryCity="ngModel" [(ngModel)]="customerservice.formData.DeliveryCity" class="form-control" required/><br/>
+                <input type="text" placeholder="Mobile" name="mobileno" #MobileNo="ngModel" [(ngModel)]="customerservice.formData.MobileNo" class="form-control" required/> <br/>
+                <button type="submit" class="btn btn-primary">Submit</button>
         
 
             </div>

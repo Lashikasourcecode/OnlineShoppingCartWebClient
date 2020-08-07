@@ -16,6 +16,10 @@ export class ProductDeailsComponent implements OnInit {
   //public productList : ProductDetail[];
 
    @Input() productIteam : ProductDetail
+
+    counterValue = 0
+
+   
   
 
   constructor(private msg:MessengerService) { }
@@ -28,6 +32,23 @@ export class ProductDeailsComponent implements OnInit {
   handleAddtoCart(productIteam)
   {
     this.msg.sendMsg(this.productIteam);
+  }
+
+  //counter value
+  get counter() {
+    return this.counterValue;
+  }
+
+  set counter(value) {
+    this.counterValue = value;
+  }
+
+  decrement() {
+    this.counter--;
+  }
+
+  increment() {
+    this.counter++;
   }
 
 }

@@ -1,0 +1,58 @@
+<form >
+<div class="row">
+    <div class="col-md-2">
+      <h5>{{p}}</h5>
+    </div>
+    <div class="col-md-8">
+ <span>{{p}}</span>
+ 
+     <table>
+         <tr>
+             <th>productName</th>
+             <th>Quantity</th>
+             <th>price</th>
+         </tr>
+        
+         <tr *ngFor="let products of checkoutcartItems" >
+             
+             <th>{{products.productName}}</th>
+             <th>{{products.quantity}}</th>
+             <th>{{products.unitPrice}}</th>
+             <th>hello</th>
+             
+
+         </tr>
+     </table>
+     <button type="button" (click)="paymentcof()">Payment Conformation</button>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+
+    </div>
+
+    </form>
+
+  
+
+
+
+
+<!--<li class="list-group-item" *ngFor="let items of Item">
+    <app-itemcart [Item]= items></app-itemcart>
+    <button type="submit"> Remove</button>
+      
+    
+</li>-->
+
+<!--<div *ngFor="let item of cartproductlist">
+    
+    {{item.productName}}
+
+    
+
+    
+
+    
+    
+</div>-->

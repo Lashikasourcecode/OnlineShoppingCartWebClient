@@ -41,6 +41,7 @@ export class RegistrationComponent implements OnInit {
        FirstName:'',
        LastName:'',
        BilingAddress:'',
+       
        DeliveryAddress:'',
        DeliveryCity:'',
        Email:'',

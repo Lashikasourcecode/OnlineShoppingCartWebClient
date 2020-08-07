@@ -1,17 +1,42 @@
-
+<form  >
+   <!--(submit)="OnSubmit(form)" #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)" ngNativeValidate-->
 <div *ngIf="cartItems.length === 0" class="aleart aleart-info" > Your cart is empty </div>
-   
+  
 
 <ul  *ngIf="cartItems.length > 0" class="list-group">
-    <li class="list-group-item" *ngFor="let item of cartItems">
+    <li class="list-group-item" *ngFor="let item of cartItems;let i = index">
+    
         <app-itemcart [cartItems]= item></app-itemcart>
+        <button type="submit" (click)="removeFromCart(i)"> Remove</button>
+          
         
     </li>
 
+
     <li class="list-group-item active">
-        <strong>Total:</strong>
+        <strong>Total:{{cartTotal}}</strong>
+    </li>
+    <li class="list-group-item active">
+        <div>
+            
+           <button type="button" class="btn btn-lightng" (onclick)="getcartproduct(item)">CheckOut</button>
+            <!--[routerLink]="['/checkoutitem']"-->
+           <!-- <button type="submit">CheckOut</button> -->
+            
+        </div>
     </li>
 
-</ul>
+</ul> 
+<!--<button type="button" class="btn btn-lightng" (click)="getcartproduct(item)">CheckOut</button>--> 
+<div *ngFor="let item of cartItems">
+    <button type="submit" (click)="getcartproduct(item)">checkout</button>
+
+</div>
+            
+<!--pass data to checkout page
+<app-checkoutitem [cartItems]="item"></app-checkoutitem> -->
+
+</form>
+
 
 
