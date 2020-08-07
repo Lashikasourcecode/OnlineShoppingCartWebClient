@@ -64,10 +64,10 @@ export class CartComponent implements OnInit {
 
    getcartproduct(cartproductList)
   {
-    console.log("hello");
-    console.log(item);
-    alert(item);
-     this.checkoutservice.postCartDetails(item).subscribe(
+    
+    console.log(cartproductList);
+    alert(cartproductList);
+     this.checkoutservice.postCartDetails(cartproductList).subscribe(
        res => {
         // console.log(cartproductList);
         // this.resetForm(form)
