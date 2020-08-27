@@ -18,7 +18,6 @@ export class CustomerDetailsService {
    {
       return this.http.post(this.apiURL,formData)
 
-
    }
 
 }

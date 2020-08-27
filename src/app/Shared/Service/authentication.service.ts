@@ -4,24 +4,29 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import{Userdetails} from'../Model/Loginmodel/userdetails';
+import { UserLogin } from '../Model/user-login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  private currentUserSubject: BehaviorSubject<Userdetails>;
-    public currentUser: Observable<Userdetails>;
-    //api path
-    readonly apiURL ='https://localhost:44351/api/'
+  private currentUserSubject: BehaviorSubject<UserLogin>;
+  public currentUser: Observable<UserLogin>; 
 
-  constructor(public http:HttpClient) { 
-    this.currentUserSubject = new BehaviorSubject<Userdetails>(JSON.parse(localStorage.getItem('currentUser')));
-        this.currentUser = this.currentUserSubject.asObservable();
+  
+
+  constructor(private http: HttpClient) {
+      this.currentUserSubject = new BehaviorSubject<UserLogin>(JSON.parse(localStorage.getItem('currentUser')));
+      this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  login(username, password) {
-    return this.http.post<any>(this.apiURL +'/users/authenticat', { username, password })
+  public get currentUserValue(): UserLogin {
+    return this.currentUserSubject.value;
+}
+
+login(username, password) {
+    return this.http.post<any>(`https://localhost:44351/api/User/login`, { username, password })
         .pipe(map(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
@@ -31,9 +36,10 @@ export class AuthenticationService {
 }
 
 logout() {
-  // remove user from local storage and set current user to null
-  localStorage.removeItem('currentUser');
-  this.currentUserSubject.next(null);
+    // remove user from local storage and set current user to null
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
 }
+
 
 }

@@ -1,0 +1,108 @@
+
+<form>
+ <div>
+     <div class="row">
+      <div class="col-md-2">
+
+      </div>
+      <div class="col-md-6">
+        <div class="userdetails" *ngFor="let user of userdetails">
+          <div class="row">
+              <div class="col-md-6">
+                <label for="username">First Name</label>
+                <input type="text" class="form-control" value="{{user.firstName}}"/>
+                
+                <label for="lastname">Lastname</label>
+                <input type="text" class="form-control" value="{{user.lastName}}"/>
+                <br/> 
+
+              </div>
+              <div class="col-md-6"> 
+            
+                <label for="datetime">Date Time</label>
+                <input type="" class="form-control" value="{{now}}" />
+            
+                <label for="amount">Amount(Rs:)</label>
+                <input type="text" class="form-control" value="{{amount}}"> 
+                <br/>
+
+              </div> 
+              
+
+          </div>
+          <div class="row">
+
+              <div class="col-md-6">
+                <label for="builingaddress">Billing Address</label>
+                <input type="text" class="form-control" value="{{user.bilingAddress}}"/>
+              </div>
+              <div class="col-md-6">
+                  
+                <label for="deliveryAddress">Deliver Address</label>
+                <input type="text" class="form-control" value="{{user.deliveryAddress}}"/>
+
+            </div>
+
+          </div>
+      </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <table>
+                      <tr>
+                      <th>productId</th>
+                      <th>Product Name</th>
+                      <th>Quantity</th>
+                      <th>price</th>
+                      
+
+                     </tr>
+                     <tr *ngFor="let cart of cartDetails">
+                       <td>{{cart.productId}}</td>
+                       <td>{{cart.productName}}</td>
+                       <td>{{cart.quantity}}</td>
+                       <td>{{cart.unitPrice}}</td>
+                       
+
+                     </tr>
+                          
+                      
+                  </table>
+
+              </div>
+
+          </div>
+
+      
+     
+    
+   <!-- <lable>Payment Method</lable>
+    <input type="text" class="form-control"/>--> 
+    <br/>
+    
+    <button type="button" class="btn btn-primary" (click)="enable()"> Ok</button> &nbsp;<button type="button" class="btn btn-primary">Cancel</button> 
+    
+    <div>
+        <p>Payment</p>
+        
+        <select name="demo" id="#">
+            <option selected="selected" value="one">MASTER</option>
+            <option value="two">VISA</option>
+            <option value="three">CREDIT</option>
+            </select>
+       <!-- <input  type="text" [disabled]='toggleButton' value="Enter Payment Method"><br/>-->
+       <br/>
+      
+              
+       <div class="box" *ngFor="let user of userdetails">
+        <button type="button" class="btn btn-primary" (click)="paymentconf(user)">Pay</button> 
+      </div>
+
+    </div>
+</div>
+<div class="col-md-2">
+
+</div>
+</div>
+</div>
+</form>
+

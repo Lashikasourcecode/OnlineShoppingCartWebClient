@@ -41,7 +41,6 @@ export class RegistrationComponent implements OnInit {
        FirstName:'',
        LastName:'',
        BilingAddress:'',
-       
        DeliveryAddress:'',
        DeliveryCity:'',
        Email:'',
@@ -75,10 +74,12 @@ export class RegistrationComponent implements OnInit {
   {
      this.customerservice.postCustomerDetails(form.value).subscribe(
        res => {
-         this.resetForm(form)
+         alert("Successfully Registered");
+         this.resetForm(form) 
        },
        err =>{
           console.log(err);
+          alert(err);
        },
      )  
      

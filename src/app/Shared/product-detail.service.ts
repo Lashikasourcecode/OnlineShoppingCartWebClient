@@ -4,6 +4,7 @@ import{HttpClient} from '@angular/common/http';
 import { from } from 'rxjs';
 import { CustomerDetails } from './Model/customer-details.model';
 import { NgForm } from '@angular/forms';
+import { CartItemModel } from './Model/CartModel/cart-item-model.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,10 @@ export class ProductDetailService {
    readonly apiURL ='https://localhost:44351/api/'
 
    productList : ProductDetail[];
-   public prolist:Array<any>;
+   public prolist:Array<any>; 
+
+   
+    
 
 
   constructor(private http:HttpClient) { } 
@@ -30,6 +34,10 @@ export class ProductDetailService {
     .toPromise();
      
    }
+
+   
+
+
 
    
 

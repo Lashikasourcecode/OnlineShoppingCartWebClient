@@ -19,7 +19,7 @@
     <li class="list-group-item active">
         <div>
             
-           <button type="button" class="btn btn-lightng" (onclick)="getcartproduct(item)">CheckOut</button>
+           <!--<button type="button" class="btn btn-lightng" [routerLink]="['/login']" (onclick)="getcartproduct(cartItems)">CheckOut1</button>-->
             <!--[routerLink]="['/checkoutitem']"-->
            <!-- <button type="submit">CheckOut</button> -->
             
@@ -29,9 +29,10 @@
 </ul> 
 <!--<button type="button" class="btn btn-lightng" (click)="getcartproduct(item)">CheckOut</button>--> 
 <div *ngFor="let item of cartItems">
-    <button type="submit" (click)="getcartproduct(item)">checkout</button>
+   
 
 </div>
+<button type="button" [routerLink]="['/login']" (click)="getcartproduct(cartItems)">checkout</button>
             
 <!--pass data to checkout page
 <app-checkoutitem [cartItems]="item"></app-checkoutitem> -->

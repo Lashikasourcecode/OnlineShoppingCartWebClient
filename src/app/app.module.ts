@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import{HttpClient} from'@angular/common/http';
 import {FormsModule} from'@angular/forms';
+import{ReactiveFormsModule} from'@angular/forms';
 import { from } from 'rxjs';
 
 
@@ -20,8 +21,16 @@ import { RegistrationComponent } from './registration/registration.component';
 import{AppRoutingModule} from'../../src/app/app-routing.module';
 import { UserloginComponent } from './Login/userlogin/userlogin.component';
 import { ProductListComponent } from './Products/product-list/product-list.component';
-import { CheckOutComponent } from './check-out/check-out.component';
 import { CheckoutitemComponent } from './ShoppingCart/cart/checkoutitem/checkoutitem.component';
+import { JWTIntercepterComponent } from './Login/jwtintercepter/jwtintercepter.component';
+
+import{CheckoutserviceService} from'../../src/app/Shared/Service/checkoutservice.service';
+import { CheckoutComponent } from './ShoppingCart/cart/checkout/checkout.component';
+import { PaymentComponent } from './ShoppingCart/payment/payment.component';
+import { LoginComponent } from './Login/login/login.component';
+import { AlertComponent } from './Login/login/alert/alert.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { AuthUserLoginComponent } from './Login/auth-user-login/auth-user-login.component';
 
 
 
@@ -40,8 +49,14 @@ import { CheckoutitemComponent } from './ShoppingCart/cart/checkoutitem/checkout
     RegistrationComponent,
     UserloginComponent,
     ProductListComponent,
-    CheckOutComponent,
     CheckoutitemComponent,
+    JWTIntercepterComponent,
+    CheckoutComponent,
+    PaymentComponent,
+    LoginComponent,
+    AlertComponent,
+    OrderDetailsComponent,
+    AuthUserLoginComponent,
   
     //routingComponent
   ],
@@ -50,12 +65,15 @@ import { CheckoutitemComponent } from './ShoppingCart/cart/checkoutitem/checkout
     AppRoutingModule,
     
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
-  providers: [],
+  providers: [CheckoutserviceService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 
+
 
 
 

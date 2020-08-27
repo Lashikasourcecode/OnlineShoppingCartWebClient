@@ -4,29 +4,31 @@
     <!--<div class="col-md-4" *ngFor="let products of productList">-->
       
         <div class="cart mb-4 shadow-sm">
-        <img src="{{productIteam.image}}" width="150px" height="150px"/>
+        <img src="{{productIteam.image}}" width="100%" height="150px"/>
         <div class="card-body">
-          <p class="card-text">{{productIteam.productId}}</p>
+          <p class="card-text">product Id:{{productIteam.productId}}</p>
           <p class="card-text">{{productIteam.productName}}</p>
-          <p class="card-text">{{productIteam.unitPrice}}</p>
+          <p class="card-text">Rs:{{productIteam.unitPrice}}</p>
          <!-- <p class="card-text">{{productIteam.quantity}}</p>-->
          <!--<div class="form-inline">
            <button type="button"(click)="addQuantity(productIteam)" class="btn btn-success">+</button>
            <input type="text"  [ngModel]="productIteam.quantity" (ngModelChange)="productIteam.quantity=$event" class="form-control" />
            <button type="button"(click)="onRemoveQuantity(productIteam)" class="btn btn-danger">-</button>
          </div>-->
-         <!---->
-         <button type="button" (click)="decrement()">-</button>
-         <span>{{counter}}</span>
-         <input type="text" placeholder="No of Items available" name="value" [(ngModel)] ="productIteam.quantity"/> <br/>
-         <button type="button" (click)="increment()">+</button>
+         
+         <!--<button type="button" (click)="decrement()">-</button>-->
+         <!--<span>{{counter}}</span>-->
+         <!--<input type="text" placeholder="No of Items available" name="value" [(ngModel)] ="quantity"/> <br/>-->
+         <input type="number" placeholder="No of Items available" name="value"   #quantity="ngModel" [(ngModel)]= "productIteam.quantity" class="form-control" keyboardType="number" required/><br/>
+ 
+         <!--<button type="button" (click)="increment()">+</button>-->
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group"> 
              
               <button type="button"
               (click)="handleAddtoCart(productIteam)" class="btn btn-sm btn-outline-secondary" >Add to Cart</button> 
               <!--(click)="addItemToCart(products)"-->
-             <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+             <!--(click)="additems"-->
              
             </div>
             
@@ -35,6 +37,6 @@
         </div>
       </div>
     <!--</div>-->
-   <!--</div>-->
+   
   
   

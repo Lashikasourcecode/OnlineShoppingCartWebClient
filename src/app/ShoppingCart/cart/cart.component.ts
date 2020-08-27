@@ -18,11 +18,13 @@ export class CartComponent implements OnInit {
   //AcartItems = ProductDetail;
   products : ProductDetail
   cartItems =[];
- //A
+ //latest code
+  productscart :CartItemModel
  //@Input() Item:ProductDetail
   parentntpost:any[]=[] 
 //get cart Item
-  CartItemModel:any
+  CartItemModel:any ;
+  public cartitems1 :CartItemModel[] =[];
 
   //product :ProductDetail
   //remove cart
@@ -37,10 +39,26 @@ export class CartComponent implements OnInit {
 
     this.messervice.getMsg().subscribe((product:ProductDetail) =>{
        console.log(product)
+       console.log("hello") 
       this.addProductToCart(product)
-      
-   })
+       
+   }) 
+
+   
+    
+
+   
      
+
+   ///
+  /** this.checkoutservice.getCartItems(this.cartitems1)
+   .subscribe((data) => {
+     this.cartItems = data;
+     console.log();
+   })*/
+   ///
+   ////
+   //
  
       
     
@@ -60,14 +78,20 @@ export class CartComponent implements OnInit {
  ProductDetail:[];
 
  item:any
- public productName:string ="Hello"
 
-   getcartproduct(cartproductList)
+  getcartproduct(item)
+  {
+     this.checkoutservice.cartitemtoCheck = item;
+  }
+ 
+ /** 
+ //import1
+ getcartproduct(item)
   {
     
-    console.log(cartproductList);
-    alert(cartproductList);
-     this.checkoutservice.postCartDetails(cartproductList).subscribe(
+    console.log(item);
+    //alert(item);
+     this.checkoutservice.postCartDetails(item).subscribe(
        res => {
         // console.log(cartproductList);
         // this.resetForm(form)
@@ -83,6 +107,10 @@ export class CartComponent implements OnInit {
    // }) 
      
   }
+  */
+  
+
+  
 
   
   
@@ -104,6 +132,16 @@ export class CartComponent implements OnInit {
       quantity:product.quantity,
       unitPrice:product.unitPrice
     })
+  
+
+    /**addProductToCart1(productcarts:CartItemModel)
+  {
+    this.cartItems.push({
+      productId :productcarts.productId,
+      productName :productcarts.productName,
+      quantity:productcarts.quantity,
+      unitPrice:productcarts.unitPrice
+    })*/
 
    /**  let productExcit = false;
     for(let i in this.cartItems){
@@ -140,6 +178,11 @@ export class CartComponent implements OnInit {
      this.cartTotal = 0;
      this.cartItems.forEach(item => {
     this.cartTotal +=(item.quantity * item.unitPrice)
+
+    //send  total into  order details
+    this.checkoutservice.Total = this.cartTotal; 
+    console.log("cart totle");
+    console.log(this.cartTotal);
     
   })
 

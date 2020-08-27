@@ -1,29 +1,61 @@
 <form >
 <div class="row">
     <div class="col-md-2">
-      <h5>{{p}}</h5>
+      
     </div>
     <div class="col-md-8">
- <span>{{p}}</span>
+       
+
  
      <table>
          <tr>
+             <th>ProductId</th>
              <th>productName</th>
              <th>Quantity</th>
-             <th>price</th>
+             <th>image</th>
+             <th>Description</th>
+             <th>UnitPrice</th>
+             <th>Discount</th>
+             <th>Availability</th>
          </tr>
         
-         <tr *ngFor="let products of checkoutcartItems" >
-             
-             <th>{{products.productName}}</th>
-             <th>{{products.quantity}}</th>
-             <th>{{products.unitPrice}}</th>
-             <th>hello</th>
+         <tr *ngFor="let cartproducts of cartData" >
+             <td>{{cartproducts.productId}}</td>
+             <td>{{cartproducts.productName}}</td>
+             <td>{{cartproducts.quantity}}</td>
+             <td><img [src]="cartproducts.image" width="50px" height="50px"/></td>
+             <td>{{cartproducts.description}}</td>
+             <td>RS:{{cartproducts.unitPrice}}</td>
+             <td>{{cartproducts.discount}}</td> 
+             <td>{{cartproducts.availability}}</td>
              
 
          </tr>
-     </table>
-     <button type="button" (click)="paymentcof()">Payment Conformation</button>
+         
+     </table> 
+     
+     
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+
+     
+        
+           <button type="button" class="btn btn-primary" (click)="CheckAvailability(cartData)">Chack Availability</button>
+           &nbsp;
+        
+           <button type="button" class="btn btn-primary"  (click)="getUserDetails()" >Order Conformation</button> 
+           <!--[routerLink]="['/order-details']"-->
+           &nbsp; 
+           <button type="button" class="btn btn-primary" [routerLink]="['/login']">Login</button>
+           
+    
+            
+    
+     
+     
     </div>
     <div class="col-md-2">
 

@@ -1,0 +1,10 @@
+
+<form>
+    <input type="text" placeholder="Amount" name="amount"  class="form-control" required/><br/>
+    <input type="text" placeholder="Payment Method" name="paymentmethod" class="form-control" required/><br>
+    <input type="text" placeholder="Date Time" name="DateTime" class="form-control" required/><br/> 
+    {{curentdateTime | date: 'shortDate' }}
+    <button type="submit" class="btn btn-primary">pay</button>
+        
+
+</form>

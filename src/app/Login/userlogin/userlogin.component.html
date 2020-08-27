@@ -12,15 +12,18 @@
                 <div>
                     <h3>User Login</h3>
                     <br/>
+                   <p>{{error}}</p> <br/>
                     <label for="validationTooltip01">Password</label>
                     <input type="password" placeholder="Password" id="validationTooltip01" value="Mark" name="Password" #password="ngModel" [(ngModel)]="userservice.formData.Password" class="form-control" required/>
                     <div class="invalid-tooltip">
                         Please provide a valid Password.
                       </div>
                     <br/>
-                    <input type="text" placeholder="Email" name="Username" #password="ngModel" [(ngModel)]="userservice.formData.Username" required/>
+                    <input type="text" placeholder="Email" name="Username" #password="ngModel" [(ngModel)]="userservice.formData.Username" class="form-control" required/>
                     <br/>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button"  class="btn btn-primary" [routerLink]="['/checkoutitem']">Login</button> 
+                    <!--[routerLink]="['/checkoutitem']"-->
+                 <!--  <button type="button" class="btn btn-primary">Exit</button>-->
                  </div>
             </div>
             <div class="col-md-3">

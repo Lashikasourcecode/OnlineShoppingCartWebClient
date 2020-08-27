@@ -17,6 +17,11 @@ export class MessengerService {
 
    }
 
+   sendCartMsg(productcart)
+    {
+      this.subject.next(productcart);
+    }
+
    getMsg()
    {
      return this.subject.asObservable();

@@ -1,17 +1,21 @@
 
 <form>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Shopping Cart</h5>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-pink border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><span><img src="../../../assets/shopping-cart-icon.png" width="25px" height="25px"/>Shopping Cart</span></h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" [routerLink]="['/user']" href="#">Features</a>
+     <!-- <a class="p-2 text-dark" [routerLink]="['/user']" href="#">Features</a>-->
       <a class="p-2 text-dark" [routerLink]="['/registration']">Registration</a>
-      <a class="p-2 text-dark" [routerLink]="['/userlogin']">Login</a> 
+      <!--<a class="p-2 text-dark" [routerLink]="['/userlogin']">Login</a> -->
       <a class="p-2 text-dark" [routerLink]="['/product-detail-list']">Products</a>
+      <a class="p-2 text-dark" [routerLink]="['/login']">Login</a> 
+      
+    
       <a [routerLink]="['/home']">Home</a>
     </nav>
-    <a class="btn btn-outline-primary" [routerLink]="['/userlogin']">Sign up</a> 
+    <!-- <a class="btn btn-outline-primary" [routerLink]="['/userlogin']">Sign up</a>-->
     <!--A href="#"-->
     <!--<router-outlet></router-outlet>-->
+    
   </div>
 </form>
 
